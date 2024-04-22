@@ -9,9 +9,8 @@
     };
 
     outputs = inputs@{ self, nixpkgs, flake-utils, ... }: {
-        ## nix build .#iso
-        ## nixcfg --build-iso && nixcfg --burn-iso 00000111112222333
-        packages.x86_64-linux.iso = inputs.nixos-generators.nixosGenerate {
+        ## nix build .#console
+        packages.x86_64-linux.console = inputs.nixos-generators.nixosGenerate {
             system = "x86_64-linux";
             format = "raw";
             specialArgs = {
