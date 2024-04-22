@@ -20,7 +20,7 @@
             modules = [
                 # Provide minimal NixOS config
                 "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-                # ./images/console.nix
+                ./images/console.nix
                 {
                     system.stateVersion = "23.11";
                 }
