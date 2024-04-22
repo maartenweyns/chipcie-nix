@@ -19,6 +19,10 @@
                 isNormalUser = true;
                 hashedPassword = "$y$j9T$WKPftiKUOrUjjvxzUS76o/$tS8nd3ja5WZK.AAmFjiF87ihOWrDmjIaX61Bf1J7H7B";
             };
+            "judgehost" = {
+                isNormalUser = true;
+                hashedPassword = "$y$j9T$oBQfoLBoXOlsKEKgxe/Ey/$yKesOZABOJCwwQzwbGApTR8sau7Yd0aZ2UbUdzSYD2B";
+            };
         };
     };
 
