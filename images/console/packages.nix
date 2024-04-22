@@ -7,7 +7,6 @@
         curl
         wget
         unzip
-        docker
         firefox
         git
         vscode

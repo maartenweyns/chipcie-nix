@@ -22,6 +22,7 @@
             "judgehost" = {
                 isNormalUser = true;
                 hashedPassword = "$y$j9T$oBQfoLBoXOlsKEKgxe/Ey/$yKesOZABOJCwwQzwbGApTR8sau7Yd0aZ2UbUdzSYD2B";
+                extraGroups = [ "docker" ];
             };
         };
     };
