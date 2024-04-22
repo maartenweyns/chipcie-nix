@@ -3,13 +3,13 @@
 {
     networking = {
         wireless.enable = false;
-        useDHCP = true;
+        useDHCP = lib.mkForce true;
         hostName = "chipcie-console";
     };
 
     users = {
         mutableUsers = true;
-        users.users = {
+        users = {
             "icpcadmin" = {
                 isNormalUser = true;
                 hashedPassword = "$y$j9T$l1SabA/8/ZVLzqELOwFe7.$BpKkbTYtxX45kUHTCI33uBnwHfM.AMuOjeebag9hvP1";
