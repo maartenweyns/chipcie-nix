@@ -19,6 +19,7 @@
             };
             modules = [
                 # Some default configs
+                "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
                 "${inputs.nixpkgs}/nixos/modules/profiles/all-hardware.nix"
                 ./images/common.nix
                 ./images/console.nix
