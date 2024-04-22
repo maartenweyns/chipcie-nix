@@ -18,8 +18,9 @@
                 inherit inputs;
             };
             modules = [
-                # Provide minimal NixOS config
-                "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+                # Some default configs
+                "${inputs.nixpkgs}/nixos/modules/profiles/all-hardware.nix"
+                ./images/common.nix
                 ./images/console.nix
                 {
                     system.stateVersion = "23.11";

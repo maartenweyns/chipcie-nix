@@ -23,5 +23,8 @@
     };
 
     # Disable sudo password requirement
-    security.sudo.wheelNeedsPassword = false;
+    security.sudo = {
+        enable = true;
+        wheelNeedsPassword = false;
+    };
 }
