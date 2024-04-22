@@ -18,6 +18,7 @@
                 inherit inputs;
             };
             modules = [
+                ./images/common.nix
                 ./images/console.nix
                 {
                     system.stateVersion = "23.11";
