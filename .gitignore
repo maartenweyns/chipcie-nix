@@ -1,2 +1,2 @@
 # Ignore NixOS build output
-result/
+result
