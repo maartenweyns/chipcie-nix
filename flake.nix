@@ -13,15 +13,11 @@
         ## nixcfg --build-iso && nixcfg --burn-iso 00000111112222333
         packages.x86_64-linux.iso = inputs.nixos-generators.nixosGenerate {
             system = "x86_64-linux";
-            format = "iso";
+            format = "raw";
             specialArgs = {
                 inherit inputs;
             };
             modules = [
-                # Some default configs
-                "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
-                "${inputs.nixpkgs}/nixos/modules/profiles/all-hardware.nix"
-                ./images/common.nix
                 ./images/console.nix
                 {
                     system.stateVersion = "23.11";
