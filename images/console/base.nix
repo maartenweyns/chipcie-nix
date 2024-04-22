@@ -1,5 +1,9 @@
 { lib, pkgs, ...}:
 
 {
-    networking.wireless.enable = false;
+    networking = {
+        wireless.enable = false;
+        useDHCP = true;
+        hostname = "chipcie-console";
+    };
 }
