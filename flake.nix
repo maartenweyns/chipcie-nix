@@ -2,6 +2,12 @@
     inputs = {
         # Use unstable for flakes
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+        
+        # Add home-manager
+        home-manager = {
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         # Use nixos generators for generating an iso
         nixos-generators.url = "github:nix-community/nixos-generators";
