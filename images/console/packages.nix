@@ -10,5 +10,6 @@
         firefox
         git
         vscode
+        temurin-jre-bin
     ];
 }
