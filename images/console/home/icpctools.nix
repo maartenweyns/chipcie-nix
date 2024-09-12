@@ -9,6 +9,6 @@
     home.file = {
         "test" = {
             enable = "true";
-        }
+        };
     }
 }
