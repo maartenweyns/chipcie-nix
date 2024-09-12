@@ -22,7 +22,7 @@ let
     
     generateFiles = zip: {
         "Downloads/${zip.name}".source = builtins.fetchurl {
-      	    url = "https://github.com/icpctools/icpctools/releases/download/v${toolsVersion}/${zip.name}-${toolsVersion}.zip";
+      	    url = "https://github.com/icpctools/icpctools/releases/download/v${toolsVersion}/${zip.name}";
       	    sha256 = zip.sha256;
         };
     };
