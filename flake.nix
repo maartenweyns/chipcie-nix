@@ -14,7 +14,7 @@
         nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = inputs@{ self, nixpkgs, flake-utils, ... }: {
+    outputs = inputs@{ self, nixpkgs, home-manager, flake-utils, ... }: {
         ## nix build .#console
         packages.x86_64-linux.console = inputs.nixos-generators.nixosGenerate {
             system = "x86_64-linux";
