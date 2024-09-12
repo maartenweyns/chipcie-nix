@@ -31,7 +31,7 @@ let
     files = lib.mkMerge filesList;
 
     extractZip = zip: ''
-        mkdir -p ~${zip.extractTo}
+        mkdir -p ~/${zip.extractTo}
 	unzip -o ~/Downloads/${zip.name} -d ${zip.extractTo}
     '';
 in {
