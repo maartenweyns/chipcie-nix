@@ -8,7 +8,8 @@
 
     home.file = {
         "test" = {
-            enable = "true";
+            enable = true;
+            text = "This is a file in Nix!";
         };
-    }
+    };
 }
