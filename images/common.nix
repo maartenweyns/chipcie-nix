@@ -6,4 +6,8 @@
 
     # Add experimental flakes support
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    # Enable audio support through pulseaudio
+    hardware.pulseaudio.enable = true;
+    hardware.pulseaudio.support32Bit = true;
 }
