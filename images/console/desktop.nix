@@ -3,25 +3,14 @@
 {
     services.xserver = {
         enable = true;
-        displayManager.gdm.enable = true;
-        desktopManager.gnome.enable = true;
+        desktopManager = {
+            xterm.enable = false;
+            xfce.enable = true;
+        };
     };
 
-    environment.gnome.excludePackages = (with pkgs; [
-        gnome-photos
-        gnome-tour
-        cheese
-        gnome-music
-        gnome-maps
-        epiphany
-        geary
-        gnome-characters
-        totem
-        tali
-        iagno
-        hitori
-        atomix
-        gnome-weather
-        gnome-clocks
-    ]);
+    services.displayManager.defaultSession = "xfce";
+
+    # Audio requirement for xfce
+    nixpkgs.config.pulseaudio = true
 }
