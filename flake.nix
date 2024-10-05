@@ -39,6 +39,7 @@
       modules = [
         ./images/common.nix
         ./images/contestant
+        inputs.home-manger.nixosModules.home-manager
         {
           system.stateVersion = "23.11";
         }
