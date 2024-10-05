@@ -3,5 +3,6 @@
 {
   imports = [
     ./admintools.nix
+    ./base.nix
   ];
 }
