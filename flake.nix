@@ -24,7 +24,21 @@
       };
       modules = [
         ./images/common.nix
-        ./images/console.nix
+        ./images/console
+        {
+          system.stateVersion = "23.11";
+        }
+      ];
+    };
+    packages.x86_64-linux.contestant = inputs.nixos-generators.nixosGenerate {
+      system = "x86_64-linux";
+      format = "raw";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./images/common.nix
+        ./images/contestant
         {
           system.stateVersion = "23.11";
         }
