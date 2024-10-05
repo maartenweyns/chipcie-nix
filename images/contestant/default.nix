@@ -8,5 +8,6 @@
     ./devtools.nix
     ./gui.nix
     ./home.nix
+    ./monitoring.nix
   ];
 }
