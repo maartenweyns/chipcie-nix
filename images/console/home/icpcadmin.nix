@@ -1,14 +1,27 @@
 { lib, pkgs, ... }:
 
 let
-  version = "0a1399bd61dec66836c834815b1f448ce6609f1c";
 
   files = {
+    "chipcie-nix" = {
+      source = builtins.fetchGit {
+        url = "ssh://git@github.com/07joshua03/chipcie-nix.git";
+        ref = "contestant";
+        rev = "941cab71c329ed70abd49e9480356461f2dfcf7f";
+        submodules = true;
+      };
+      target = "ro/chipcie-nix";
+      onChange = ''
+        cp -rL /home/icpcadmin/ro/chipcie-nix /home/icpcadmin/chipcie-nix
+        chmod -R +w /home/icpcadmin/chipcie-nix
+      '';
+    };
+
     "icpc-playbooks" = {
       source = builtins.fetchGit {
         url = "ssh://git@github.com/wisvch/icpc-playbooks.git";
         ref = "main";
-        rev = version;
+        rev = "0a1399bd61dec66836c834815b1f448ce6609f1c";
         submodules = true;
       };
       target = "ro/icpc-playbooks";
