@@ -2,10 +2,10 @@
 
 {
   home.file = {
-    "wallpaper" = {
-      source = "./wallpaper.jpg";
-      target = "./.background-image";
-    };
+    # "wallpaper" = {
+    #   source = builtins.readFile "../files/wallpaper.png";
+    #   target = "./.background-image";
+    # };
   };
 
   home.username = "contestant";
