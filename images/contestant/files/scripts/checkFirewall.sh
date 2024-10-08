@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sudo ufw status | grep 'Status: active' >/dev/null 2>&1
 RET=$?

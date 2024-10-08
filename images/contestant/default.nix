@@ -9,6 +9,7 @@
     # ./devtools.nix
     ./gui.nix
     ./home.nix
+    ./icpc.nix
     ./monitoring.nix
     ./printer.nix
     ./scripts.nix

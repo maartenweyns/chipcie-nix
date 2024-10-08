@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Cleans up temporary files, etc and makes it ready for imaging
 
 UTILDIR="/icpc"

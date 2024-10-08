@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Remove the team wallpaper
 rm -f /icpc/teamWallpaper.png

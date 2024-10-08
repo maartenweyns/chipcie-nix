@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Load some useful things into the kernels cache
 VMTOUCH="/usr/bin/vmtouch -t"
 

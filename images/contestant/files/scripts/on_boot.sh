@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Ignore SIGHUP, sometimes systemd sends it to us shortly after
 # boot and that kills us.
@@ -10,28 +10,32 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 cat << EOF
-
-    ___ _  _ _       ___ _
-   / __| || (_)_ __ / __(_)___
-  | (__| __ | | '_ \ (__| / -_)
-   \___|_||_|_| .__/\___|_\___|
-              |_|
+ _____  _   _ _       _____ _             _   _ _      
+/  __ \| | | (_)     /  __ (_)           | \ | (_)     
+| /  \/| |_| |_ _ __ | /  \/_  ___ ______|  \| |___  __
+| |    |  _  | | '_ \| |   | |/ _ \______| . ' | \ \/ /
+| \__/\| | | | | |_) | \__/\ |  __/      | |\  | |>  < 
+ \____/\_| |_/_| .__/ \____/_|\___|      \_| \_/_/_/\_\ 
+               | |                                     
+               |_|                                     
 
 EOF
 
-su - -c /icpc/scripts/set_hostname.sh
-
-su - -c /icpc/scripts/self_test
-
-if [ -f /icpc/setup_complete ]; then
-  # nothing to do, setup is already done(but still let it run with -f or --force)
-  echo "Already configured."
-  exit
-fi
+# su - -c /icpc/scripts/set_hostname.sh
+{
+/run/current-system/sw/bin/su - -c /etc/icpc/scripts/self_test
+} || {
+echo "Self test failed, please check the logs"
+}
+# if [ -f /icpc/setup_complete ]; then
+#   # nothing to do, setup is already done(but still let it run with -f or --force)
+#   echo "Already configured."
+#   exit
+# fi
 
 read -r -p "Do you want to run icpc_setup? [y/N] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
-    /icpc/scripts/icpc_setup.sh
+    /etc/icpc/scripts/icpc_setup.sh
 fi

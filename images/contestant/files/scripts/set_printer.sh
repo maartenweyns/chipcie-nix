@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 printerIP=$1
 
 if [[ ! $printerIP =~ ":/" ]]; then

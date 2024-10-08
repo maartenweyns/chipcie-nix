@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Kill all the user processes(and wait for them to die)
 killall -9 -u contestant

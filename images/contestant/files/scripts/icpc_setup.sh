@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Ignore SIGHUP, sometimes systemd sends it to us shortly after
 # boot and that kills us.

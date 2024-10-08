@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 VFILE="/tmp/versions.txt"
 echo "Software Versions" > $VFILE
