@@ -33,8 +33,6 @@
     {
       inherit lib;
 
-      packages.${system} = import ./packages { inherit pkgs; };
-
       # For nixos-rebuild
       nixosConfigurations = {
         console = lib.nixosSystem {
@@ -65,33 +63,36 @@
       };
 
       ## nix build .#console
-      packages.x86_64-linux.console = inputs.nixos-generators.nixosGenerate {
-        system = "x86_64-linux";
-        format = "raw";
-        specialArgs = {
-          inherit self inputs system;
+      packages.x86_64-linux = import ./packages {
+        inherit pkgs;
+        console = inputs.nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          format = "raw";
+          specialArgs = {
+            inherit self inputs system;
+          };
+          modules = [
+            ./images/common.nix
+            ./images/console
+            {
+              system.stateVersion = "23.11";
+            }
+          ];
         };
-        modules = [
-          ./images/common.nix
-          ./images/console
-          {
-            system.stateVersion = "23.11";
-          }
-        ];
-      };
-      packages.x86_64-linux.contestant = inputs.nixos-generators.nixosGenerate {
-        system = "x86_64-linux";
-        format = "raw";
-        specialArgs = {
-          inherit self inputs system;
+        x86_64-linux.contestant = inputs.nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          format = "raw";
+          specialArgs = {
+            inherit self inputs system;
+          };
+          modules = [
+            ./images/common.nix
+            ./images/contestant
+            {
+              system.stateVersion = "23.11";
+            }
+          ];
         };
-        modules = [
-          ./images/common.nix
-          ./images/contestant
-          {
-            system.stateVersion = "23.11";
-          }
-        ];
       };
     };
 }
