@@ -19,15 +19,6 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-
-        overlays = [ ];
-      };
-
     in
 
     {
@@ -63,36 +54,33 @@
       };
 
       ## nix build .#console
-      packages.x86_64-linux = import ./packages {
-        inherit pkgs;
-        console = inputs.nixos-generators.nixosGenerate {
-          system = "x86_64-linux";
-          format = "raw";
-          specialArgs = {
-            inherit self inputs system;
-          };
-          modules = [
-            ./images/common.nix
-            ./images/console
-            {
-              system.stateVersion = "23.11";
-            }
-          ];
+      packages.x86_64-linux.console = inputs.nixos-generators.nixosGenerate {
+        system = "x86_64-linux";
+        format = "raw";
+        specialArgs = {
+          inherit self inputs system;
         };
-        contestant = inputs.nixos-generators.nixosGenerate {
-          system = "x86_64-linux";
-          format = "raw";
-          specialArgs = {
-            inherit self inputs system;
-          };
-          modules = [
-            ./images/common.nix
-            ./images/contestant
-            {
-              system.stateVersion = "23.11";
-            }
-          ];
+        modules = [
+          ./images/common.nix
+          ./images/console
+          {
+            system.stateVersion = "23.11";
+          }
+        ];
+      };
+      packages.x86_64-linux.contestant = inputs.nixos-generators.nixosGenerate {
+        system = "x86_64-linux";
+        format = "raw";
+        specialArgs = {
+          inherit self inputs system;
         };
+        modules = [
+          ./images/common.nix
+          ./images/contestant
+          {
+            system.stateVersion = "23.11";
+          }
+        ];
       };
     };
 }
