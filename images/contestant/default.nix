@@ -10,6 +10,7 @@
     ./gui.nix
     ./home.nix
     ./monitoring.nix
+    ./printer.nix
     ./scripts.nix
   ];
 }
