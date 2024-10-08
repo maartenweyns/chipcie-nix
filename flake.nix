@@ -27,6 +27,7 @@
       # For nixos-rebuild
       nixosConfigurations = {
         console = lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
             inherit self inputs system;
           };
@@ -40,6 +41,7 @@
         };
 
         contestant = lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
             inherit self inputs system;
           };
