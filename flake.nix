@@ -79,7 +79,7 @@
             }
           ];
         };
-        x86_64-linux.contestant = inputs.nixos-generators.nixosGenerate {
+        contestant = inputs.nixos-generators.nixosGenerate {
           system = "x86_64-linux";
           format = "raw";
           specialArgs = {
