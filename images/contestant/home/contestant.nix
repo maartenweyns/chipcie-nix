@@ -6,6 +6,12 @@
     #   source = builtins.readFile "../files/wallpaper.png";
     #   target = "./.background-image";
     # };
+    "home-dir" = {
+      source = ../files/home_dirs/contestant;
+      target = "fake/..";
+      recursive = true;
+    };
+
   };
 
   home.username = "contestant";
