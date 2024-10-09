@@ -13,5 +13,6 @@
     ./monitoring.nix
     ./printer.nix
     ./scripts.nix
+    ./vmtouch.nix
   ];
 }
