@@ -4,21 +4,21 @@
   environment.systemPackages = with pkgs; [
     vscode
     neovim-gtk #replaces vim-gtk3?
-    emacs
-    gedit
-    nano
-    codeblocks
-    geany
-    kate
+    # emacs
+    # gedit
+    # nano
+    # codeblocks
+    # geany
+    # kate
     neovim
-    jetbrains.pycharm-community
-    jetbrains.idea-community
-    jetbrains.clion
-    eclipses.eclipse-java # ?
-    byobu
-    gnome.gnome-terminal
+    # jetbrains.pycharm-community
+    # jetbrains.idea-community
+    # jetbrains.clion
+    # eclipses.eclipse-java # ?
+    # byobu
+    gnome-terminal
     xterm
-    python3Full
+    # python3Full
     perl
     ddd
     gdb
@@ -27,5 +27,10 @@
     git
     screen
     tmux
+
+    # Just for Josh :)
+    gitkraken
+    just
+    nh
   ];
 }
