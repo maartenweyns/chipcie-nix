@@ -48,6 +48,7 @@
           modules = [
             ./images/contestant
             ./images/common.nix
+            ./hosts/contestant/hardware-configuration.nix
             {
               system.stateVersion = "23.11";
             }
