@@ -3,6 +3,6 @@
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
-
+  boot.isContainer = true;
 
 }

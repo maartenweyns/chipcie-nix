@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 let
-
-  on_boot_text = builtins.readFile ../files/scripts/on_boot.sh;
+  on_boot_text = builtins.readFile ./files/scripts/on_boot.sh;
   on_boot = pkgs.writeShellScriptBin "on-boot" on_boot_text;
 in
 
