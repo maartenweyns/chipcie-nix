@@ -71,11 +71,14 @@
           }
         ];
       };
+
+      ## nix build .#contestant
       packages.x86_64-linux.contestant = inputs.nixos-generators.nixosGenerate {
         system = "x86_64-linux";
         format = "raw";
         specialArgs = {
           inherit self inputs system;
+          diskSize = 20 * 1024;
         };
         modules = [
           ./images/common.nix
