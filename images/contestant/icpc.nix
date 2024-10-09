@@ -5,22 +5,6 @@ let
 in
 
 rec {
-  # systemd.tmpfiles.rules = [
-  # "C+ /icpc/wallpaper.png - - - - ${environment.etc.wallpaper.source}"
-  # ];
-
-  environment.etc = {
-    wallpaper = {
-      source = ./files/wallpaper.png;
-      target = "wallpaper.png";
-    };
-
-    contestant-home = {
-      source = ./files/home_dirs/contestant;
-      target = "skel";
-    };
-  };
-
   environment.systemPackages = with pkgs; [
     noto-fonts-color-emoji
     imagemagick
@@ -47,12 +31,23 @@ rec {
     # "C+ /icpc/scripts 0755 icpcadmin icpcadmin - ${environment.etc.icpc-scripts.source}"
     # "C+ /icpc/scripts/bin/disable-turboboost_ht 0755 icpcadmin icpcadmin - ${environment.etc.disable-turboboost.source}"
     # "C+ /icpc/scripts/bin/submit 0755 icpcadmin icpcadmin - ${environment.etc.submit-client.source}"
+    "C+ /icpc/wallpaper.png 0755 - - - ${environment.etc.wallpaper.source}"
     "Z /icpc/scripts 755 icpcadmin icpcadmin -"
     "f /icpc/netrc 644 icpcadmin icpcadmin -"
   ];
 
   environment.etc =
     {
+      wallpaper = {
+        source = ./files/wallpaper.png;
+        target = "wallpaper.png";
+      };
+
+
+      contestant-home = {
+        source = ./files/home_dirs/contestant;
+        target = "skel";
+      };
       on_boot = {
         source = ./files/scripts/on_boot.sh;
         target = "icpc/scripts/on_boot.sh";
@@ -107,7 +102,11 @@ rec {
         mode = "0755";
       };
 
-
+      disable-mounting = {
+        source = ./files/99-deny-polkit-mount.pkla;
+        target = "polkit-1/localauthority/50-local.d/disable-mount.pkla";
+        mode = "0644";
+      };
 
       disable-turboboost = {
         source = pkgs.fetchurl {
