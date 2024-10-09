@@ -23,6 +23,27 @@
 
   time.timeZone = "Europe/Amsterdam";
 
+  environment.etc = {
+    "persistent-udev-rules" = {
+      text = "";
+      target = "udev/rules.d/75-persistent-net-generator.rules";
+    };
+    "netcfg" = {
+      text = ''
+        network:
+          version: 2
+          renderer: networkd
+          ethernets:
+            default:
+              match:
+                name: e*
+              dhcp4: yes
+              dhcp-identifier: mac
+      '';
+      target = "netplan/01-netcfg.yaml";
+    };
+  };
+
   # Enable audio support through pulseaudio
   # hardware.pulseaudio.enable = true;
   # hardware.pulseaudio.support32Bit = true;
