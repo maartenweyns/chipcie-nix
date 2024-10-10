@@ -10,6 +10,7 @@
     ./gui.nix
     ./home.nix
     ./icpc.nix
+    ./localweb.nix
     ./monitoring.nix
     ./printer.nix
     ./scripts.nix
