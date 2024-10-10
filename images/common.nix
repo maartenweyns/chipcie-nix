@@ -3,6 +3,7 @@
 {
   boot.kernelParams = [ "console=tty0" "consoleblank=0" "biosdevname=0" "net.ifnames=0" ];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "squid-6.10" ];
 
   # Add experimental flakes support
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

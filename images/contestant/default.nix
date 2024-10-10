@@ -7,6 +7,7 @@
     ./browser.nix
     ./compilers.nix
     ./devtools.nix
+    ./firewall.nix
     ./gui.nix
     ./home.nix
     ./icpc.nix

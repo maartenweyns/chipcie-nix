@@ -130,7 +130,7 @@ rec {
     description = "Initial self test";
     enable = true;
     before = [ "display-manager.service" ];
-    wants = [ "network-online.target" "printer.target" ];
+    wants = [ "network-online.target" "printer.target" "squid.service" ];
     after = [ "network-online.target" "cups.service" "getty@tty2.service" ];
     wantedBy = [ "graphical.target" "multi-user.target" ];
 
